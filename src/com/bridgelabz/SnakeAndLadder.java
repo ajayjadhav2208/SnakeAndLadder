@@ -6,13 +6,16 @@ public class SnakeAndLadder {
 
     public static void main(String[] args) {
         int position = 0;
+        int IS_NO_PLAY = 0;
         int IS_LADDER = 2;
         int IS_SNAKE = 1;
-        int NO_PLAY = 0;
         int WINNING_POSITION = 100;
+        int diceCount = 0;
+
         System.out.println("Welcome to Snake and Ladder Game");
 
         while (position < WINNING_POSITION) {
+            diceCount++;
             Random random = new Random();
             int diceNumber = random.nextInt(6) + 1;
             int option = random.nextInt(3);
@@ -28,11 +31,14 @@ public class SnakeAndLadder {
                 if (position < 0) {
                     position = 0;
                 }
-            } else {
+            }
+            else {
                 System.out.println("No Play for the Player");
             }
             System.out.println("Dice Number : " + diceNumber);
+            System.out.println(); // Just used to print empty line.
             System.out.println("Position : " + position);
+            System.out.println("Dice Count : " + diceCount);
         }
     }
 }
